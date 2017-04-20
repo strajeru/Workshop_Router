@@ -67,8 +67,6 @@ class Router implements RouterInterface
     }
 
     /**
-     * Validate and Match News Author and modify request
-     *
      * @param \Magento\Framework\App\RequestInterface|\Magento\Framework\HTTP\PhpEnvironment\Request $request
      * @return ActionInterface
      */
@@ -98,7 +96,6 @@ class Router implements RouterInterface
                 $request->setActionName('index');
                 $request->setAlias(Url::REWRITE_REQUEST_PATH_ALIAS, $urlKey);
                 $this->dispatched = true;
-//                var_dump($request->getModuleName());exit;
                 return $this->actionFactory->create(Forward::class);
             }
         }
